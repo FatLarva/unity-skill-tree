@@ -1,0 +1,19 @@
+{
+    "name": "Game.SkillTree.InputSystem",
+    "rootNamespace": "Game.SkillTree.InputSystem",
+    "references": [
+        "Game.SkillTree",
+        "Unity.InputSystem"
+    ],
+    "defineConstraints": [
+        "FATLARVA_SKILLTREE_INPUT_SYSTEM",
+        "ENABLE_INPUT_SYSTEM"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.inputsystem",
+            "expression": "1.0.0",
+            "define": "FATLARVA_SKILLTREE_INPUT_SYSTEM"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "name": "Game.SkillTree.Editor",
+    "rootNamespace": "Game.SkillTree.Editor",
+    "references": [
+        "Game.SkillTree",
+        "Game.SkillTree.Data",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ]
+}

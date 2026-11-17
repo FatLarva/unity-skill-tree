@@ -1,0 +1,29 @@
+{
+  "name": "com.fatlarva.skilltree",
+  "version": "0.2.0",
+  "displayName": "Fat Larva Skill Tree",
+  "description": "Reusable uGUI skill tree: data, requirements, graph rendering, layout editing and a playable sample.",
+  "unity": "6000.6",
+  "author": {
+    "name": "Fat Larva"
+  },
+  "dependencies": {
+    "com.fatlarva.tools": "1.1.0",
+    "com.unity.ugui": "2.6.0",
+    "com.unity.nuget.newtonsoft-json": "3.2.2",
+    "com.unity.modules.uielements": "1.0.0",
+    "com.unity.modules.imageconversion": "1.0.0"
+  },
+  "samples": [
+    {
+      "displayName": "Basic Skill Tree",
+      "description": "30-node tree with a prefab view, game-owned progress and wallet, inline effects and custom icon example. Import TMP Essential Resources before playing.",
+      "path": "Samples~/Basic"
+    },
+    {
+      "displayName": "Large Skill Tree (600 nodes)",
+      "description": "Independent 600-node sample for navigation, authoring and rendering checks. Import TMP Essential Resources before playing; Basic sample is not required.",
+      "path": "Samples~/LargeTree"
+    }
+  ]
+}

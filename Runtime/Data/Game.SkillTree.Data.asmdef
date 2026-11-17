@@ -1,0 +1,8 @@
+{
+    "name": "Game.SkillTree.Data",
+    "rootNamespace": "Game.SkillTree.Data",
+    "references": [
+        "Game.SkillTree",
+        "UnityEngine.UI"
+    ]
+}

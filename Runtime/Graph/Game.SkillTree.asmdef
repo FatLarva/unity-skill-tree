@@ -1,0 +1,10 @@
+{
+    "name": "Game.SkillTree",
+    "rootNamespace": "Game.SkillTree",
+    "references": [
+        "GraphicPrimitives",
+        "UnityTools",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI"
+    ]
+}
