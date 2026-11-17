@@ -1,0 +1,10 @@
+{
+    "name": "Game.SkillTree.Json.Tests",
+    "rootNamespace": "Game.SkillTree.Tests",
+    "references": ["Game.SkillTree", "Game.SkillTree.Data", "Game.SkillTree.Editor"],
+    "includePlatforms": ["Editor"],
+    "optionalUnityReferences": ["TestAssemblies"],
+    "overrideReferences": true,
+    "precompiledReferences": ["nunit.framework.dll", "Newtonsoft.Json.dll"],
+    "autoReferenced": false
+}

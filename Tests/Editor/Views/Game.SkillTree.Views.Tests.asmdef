@@ -1,0 +1,8 @@
+{
+    "name": "Game.SkillTree.Views.Tests",
+    "rootNamespace": "Game.SkillTree.Tests",
+    "references": ["Game.SkillTree", "Game.SkillTree.Data", "Unity.TextMeshPro", "UnityEngine.UI"],
+    "includePlatforms": ["Editor"],
+    "optionalUnityReferences": ["TestAssemblies"],
+    "autoReferenced": false
+}

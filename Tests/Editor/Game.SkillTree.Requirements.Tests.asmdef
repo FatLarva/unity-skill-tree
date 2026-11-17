@@ -1,0 +1,8 @@
+{
+    "name": "Game.SkillTree.Requirements.Tests",
+    "rootNamespace": "Game.SkillTree.Tests",
+    "references": ["Game.SkillTree.Data", "Game.SkillTree"],
+    "includePlatforms": ["Editor"],
+    "optionalUnityReferences": ["TestAssemblies"],
+    "autoReferenced": false
+}
