@@ -1,0 +1,11 @@
+{
+    "name": "Game.SkillTree.Samples",
+    "rootNamespace": "Game.SkillTree.Samples",
+    "references": [
+        "Game.SkillTree",
+        "Game.SkillTree.Data",
+        "UnityTools",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI"
+    ]
+}

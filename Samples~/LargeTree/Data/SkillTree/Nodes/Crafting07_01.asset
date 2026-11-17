@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49d7ec304b225a419820e5f9c952fe0, type: 3}
+  m_Name: Crafting07_01
+  m_EditorClassIdentifier: Game.SkillTree.Data::Game.SkillTree.Data.SkillNodeConfig
+  _owner: {fileID: 11400000, guid: 2cdb25df7e9192348861fda66cb30591, type: 2}
+  _properties:
+    _id: 345
+    _label: CR 7.1
+    _title: Crafting 7.1
+    _description: A skill in the 600-node sample. Each level adds its listed effects.
+    _category: Crafting
+    _kind: 2
+    _hideUntilAvailable: 0
+    _showRequirements: []
+    _levels:
+    - _cost: 2
+      _requirementText: 
+      _requirements: []
+      _effects:
+      - _type:
+          _asset: {fileID: 11400000, guid: c4b0d862042a55abb2d80edb7f9239cd, type: 2}
+        _parameters: {rid: 1000}
+  references:
+    version: 2
+    RefIds:
+    - rid: 1000
+      type: {class: StatModifierParameters, ns: Game.SkillTree.LargeSample, asm: Game.SkillTree.LargeSample}
+      data:
+        Stat: large.crafting.power
+        Value: 1
+        Operation: 0

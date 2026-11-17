@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49d7ec304b225a419820e5f9c952fe0, type: 3}
+  m_Name: Resilience
+  m_EditorClassIdentifier: Game.SkillTree.Data::Game.SkillTree.Data.SkillNodeConfig
+  _owner: {fileID: 11400000, guid: b47522dbbe84c3d499329e4669373d62, type: 2}
+  _properties:
+    _id: 18
+    _label: RESILIENCE
+    _title: Resilience
+    _description: Resist difficult weather and terrain.
+    _category: SURVIVAL
+    _kind: 2
+    _hideUntilAvailable: 0
+    _showRequirements: []
+    _levels:
+    - _cost: 4
+      _description: 
+      _requirementText: 
+      _requirements:
+      - _type: {fileID: 11400000, guid: 67c848aa0d33d7149899bcf475a13723, type: 2}
+        _parameters:
+          rid: 1000
+      _effects:
+      - _type:
+          _asset: {fileID: 11400000, guid: 96811655cc2850adaa6801c601f05d47, type: 2}
+        _parameters: {rid: 1003}
+    - _cost: 9
+      _description: 
+      _requirementText: 
+      _requirements:
+      - _type: {fileID: 11400000, guid: 67c848aa0d33d7149899bcf475a13723, type: 2}
+        _parameters:
+          rid: 1001
+      _effects:
+      - _type:
+          _asset: {fileID: 11400000, guid: 96811655cc2850adaa6801c601f05d47, type: 2}
+        _parameters: {rid: 1004}
+    - _cost: 20
+      _description: 
+      _requirementText: 
+      _requirements:
+      - _type: {fileID: 11400000, guid: 67c848aa0d33d7149899bcf475a13723, type: 2}
+        _parameters:
+          rid: 1002
+      _effects:
+      - _type:
+          _asset: {fileID: 11400000, guid: 96811655cc2850adaa6801c601f05d47, type: 2}
+        _parameters: {rid: 1005}
+  references:
+    version: 2
+    RefIds:
+    - rid: 1000
+      type: {class: SkillNodeLevelRequirementType/Parameters, ns: Game.SkillTree.Data, asm: Game.SkillTree.Data}
+      data:
+        _node: {fileID: 11400000, guid: 37703a049b474044780ce7ba5d5cadff, type: 2}
+        _level: 1
+    - rid: 1001
+      type: {class: SkillNodeLevelRequirementType/Parameters, ns: Game.SkillTree.Data, asm: Game.SkillTree.Data}
+      data:
+        _node: {fileID: 11400000, guid: 37703a049b474044780ce7ba5d5cadff, type: 2}
+        _level: 2
+    - rid: 1002
+      type: {class: SkillNodeLevelRequirementType/Parameters, ns: Game.SkillTree.Data, asm: Game.SkillTree.Data}
+      data:
+        _node: {fileID: 11400000, guid: 37703a049b474044780ce7ba5d5cadff, type: 2}
+        _level: 2
+    - rid: 1003
+      type: {class: StatModifierParameters, ns: Game.SkillTree.Samples, asm: Game.SkillTree.Samples}
+      data:
+        Stat: resilience-bonus
+        Value: 0.05
+        Operation: 0
+    - rid: 1004
+      type: {class: StatModifierParameters, ns: Game.SkillTree.Samples, asm: Game.SkillTree.Samples}
+      data:
+        Stat: resilience-bonus
+        Value: 0.1
+        Operation: 0
+    - rid: 1005
+      type: {class: StatModifierParameters, ns: Game.SkillTree.Samples, asm: Game.SkillTree.Samples}
+      data:
+        Stat: resilience-bonus
+        Value: 0.15
+        Operation: 0

@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49d7ec304b225a419820e5f9c952fe0, type: 3}
+  m_Name: Crafting01_05
+  m_EditorClassIdentifier: Game.SkillTree.Data::Game.SkillTree.Data.SkillNodeConfig
+  _owner: {fileID: 11400000, guid: 2cdb25df7e9192348861fda66cb30591, type: 2}
+  _properties:
+    _id: 307
+    _label: CR 1.5
+    _title: Crafting 1.5
+    _description: A skill in the 600-node sample. Each level adds its listed effects.
+    _category: Crafting
+    _kind: 2
+    _hideUntilAvailable: 0
+    _showRequirements: []
+    _levels:
+    - _cost: 10
+      _requirementText: 
+      _requirements:
+      - _type: {fileID: 11400000, guid: 67c848aa0d33d7149899bcf475a13723, type: 2}
+        _parameters: {rid: 1000}
+      _effects:
+      - _type:
+          _asset: {fileID: 11400000, guid: c4b0d862042a55abb2d80edb7f9239cd, type: 2}
+        _parameters: {rid: 1003}
+    - _cost: 13
+      _requirementText: 
+      _requirements:
+      - _type: {fileID: 11400000, guid: 67c848aa0d33d7149899bcf475a13723, type: 2}
+        _parameters: {rid: 1001}
+      _effects:
+      - _type:
+          _asset: {fileID: 11400000, guid: c4b0d862042a55abb2d80edb7f9239cd, type: 2}
+        _parameters: {rid: 1004}
+      - _type:
+          _asset: {fileID: 11400000, guid: c4b0d862042a55abb2d80edb7f9239cd, type: 2}
+        _parameters: {rid: 1005}
+    - _cost: 16
+      _requirementText: 
+      _requirements:
+      - _type: {fileID: 11400000, guid: 67c848aa0d33d7149899bcf475a13723, type: 2}
+        _parameters: {rid: 1002}
+      _effects:
+      - _type:
+          _asset: {fileID: 11400000, guid: c4b0d862042a55abb2d80edb7f9239cd, type: 2}
+        _parameters: {rid: 1006}
+  references:
+    version: 2
+    RefIds:
+    - rid: 1000
+      type: {class: SkillNodeLevelRequirementType/Parameters, ns: Game.SkillTree.Data, asm: Game.SkillTree.Data}
+      data:
+        _node: {fileID: 11400000, guid: 5b666ed0cd8e80c44a7d0de19a1d2f29, type: 2}
+        _level: 1
+    - rid: 1001
+      type: {class: SkillNodeLevelRequirementType/Parameters, ns: Game.SkillTree.Data, asm: Game.SkillTree.Data}
+      data:
+        _node: {fileID: 11400000, guid: 5b666ed0cd8e80c44a7d0de19a1d2f29, type: 2}
+        _level: 1
+    - rid: 1002
+      type: {class: SkillNodeLevelRequirementType/Parameters, ns: Game.SkillTree.Data, asm: Game.SkillTree.Data}
+      data:
+        _node: {fileID: 11400000, guid: 5b666ed0cd8e80c44a7d0de19a1d2f29, type: 2}
+        _level: 1
+    - rid: 1003
+      type: {class: StatModifierParameters, ns: Game.SkillTree.LargeSample, asm: Game.SkillTree.LargeSample}
+      data:
+        Stat: large.crafting.power
+        Value: 5
+        Operation: 0
+    - rid: 1004
+      type: {class: StatModifierParameters, ns: Game.SkillTree.LargeSample, asm: Game.SkillTree.LargeSample}
+      data:
+        Stat: large.crafting.power
+        Value: 6
+        Operation: 0
+    - rid: 1005
+      type: {class: StatModifierParameters, ns: Game.SkillTree.LargeSample, asm: Game.SkillTree.LargeSample}
+      data:
+        Stat: large.crafting.efficiency
+        Value: 0.02
+        Operation: 0
+    - rid: 1006
+      type: {class: StatModifierParameters, ns: Game.SkillTree.LargeSample, asm: Game.SkillTree.LargeSample}
+      data:
+        Stat: large.crafting.power
+        Value: 7
+        Operation: 0

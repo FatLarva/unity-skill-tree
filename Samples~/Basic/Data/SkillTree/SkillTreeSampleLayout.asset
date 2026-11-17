@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b2559dd1a39974682b425109ca5e7f, type: 3}
+  m_Name: SkillTreeSampleLayout
+  m_EditorClassIdentifier: Game.SkillTree.Data::Game.SkillTree.Data.SkillTreeLayoutConfig
+  _viewPrefab: {fileID: 8061563011155146825, guid: 35f8ae4d643e43d0aad764e1d7fac31b, type: 3}
+  _showNodeLabels: 1
+  _fitPadding: 32
+  _curveTolerancePixels: 0.25
+  _revealFrameDuration: 0.35
+  _revealTravelCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 3
+      outSlope: 3
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _nodes:
+  - {fileID: 11400000, guid: c4a558307ecf88445941d29bd979ada3, type: 2}
+  - {fileID: 11400000, guid: a7bda9417a1eea741b2b942e2f4c39ce, type: 2}
+  - {fileID: 11400000, guid: 8804c5302cf9bc542afa06150a335f52, type: 2}
+  - {fileID: 11400000, guid: 56450c8fe734ac8419abf3da4ed692b5, type: 2}
+  - {fileID: 11400000, guid: 87ecd6d188ccf3e40bd33b9f91750f81, type: 2}
+  - {fileID: 11400000, guid: 6042dbd4fb98eea4c899c5edba23dd31, type: 2}
+  - {fileID: 11400000, guid: c24924b6a56cd694581642e2401aa62a, type: 2}
+  - {fileID: 11400000, guid: 2658743a0e86e034a99f425a400a3dae, type: 2}
+  - {fileID: 11400000, guid: 46c8a56716d7f7746bd7061a05cbf52f, type: 2}
+  - {fileID: 11400000, guid: 11b645355b69d034eb12b4547b12453b, type: 2}
+  - {fileID: 11400000, guid: 578ac8044bfcc064892d480ecec648aa, type: 2}
+  - {fileID: 11400000, guid: ae2d29f26b4506d438f2c66365986830, type: 2}
+  - {fileID: 11400000, guid: d005e36748ea7fc49989ed4319b202b6, type: 2}
+  - {fileID: 11400000, guid: 95f50c76c76e8dd4198574caf3c5ca03, type: 2}
+  - {fileID: 11400000, guid: eaf6220878a60dd4594ee938856b068c, type: 2}
+  - {fileID: 11400000, guid: 11fc44a4ba089bd4ab67e0717bdcf4bd, type: 2}
+  - {fileID: 11400000, guid: 81cd49bbc41984947931fa2d0623af8b, type: 2}
+  - {fileID: 11400000, guid: 486135bb3c1df8947b8fab9996e58134, type: 2}
+  - {fileID: 11400000, guid: f977b0201c921ac4094420e188c4141e, type: 2}
+  - {fileID: 11400000, guid: 9d8394be5fc1995439dabfc575716156, type: 2}
+  - {fileID: 11400000, guid: 710e8a7d7e2f98b41835fb9834a294d4, type: 2}
+  - {fileID: 11400000, guid: d2e7f817d9c4a014998504339900ead9, type: 2}
+  - {fileID: 11400000, guid: ca6b840ff80538e408f58304f1db5fad, type: 2}
+  - {fileID: 11400000, guid: d6aff72383722fc40944019fd954b1bc, type: 2}
+  - {fileID: 11400000, guid: e33519866a3d1c942a29b65a422737e4, type: 2}
+  - {fileID: 11400000, guid: 802e8dfe98c4a514ca1883e7149f01b2, type: 2}
+  - {fileID: 11400000, guid: 3a112cb96b9a2ce49a9975e19d9aa2ca, type: 2}
+  - {fileID: 11400000, guid: f2fdbc7e8d54cab4297e15bf3fe33754, type: 2}
+  - {fileID: 11400000, guid: daf5128ea943da04c9bb61c858d44875, type: 2}
+  - {fileID: 11400000, guid: 7d0e82adf33be9347af79c2320bebf4b, type: 2}
+  _iconRenderers:
+  - {fileID: 11400000, guid: 99a2340eece84bb499226c53ffd00809, type: 2}
+  - {fileID: 11400000, guid: 3307ac97a518ab7488155bf23e393791, type: 2}
+  - {fileID: 11400000, guid: 24bd039a24149284697cbb684436dd40, type: 2}
+  - {fileID: 11400000, guid: 93c3c1183657a414cb8f624b514bc48e, type: 2}
+  _decorationRenderer: {fileID: 11400000, guid: c4865e4eba4b968488324fd1714b0642, type: 2}
+  _purchaseGlowPeriod: 2.4
+  _purchaseGlowMinOpacity: 0.18
+  _purchaseGlowMaxOpacity: 0.45
+  _purchaseEffectDuration: 0.85

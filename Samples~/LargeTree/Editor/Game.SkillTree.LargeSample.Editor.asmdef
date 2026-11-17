@@ -1,0 +1,10 @@
+{
+    "name": "Game.SkillTree.LargeSample.Editor",
+    "rootNamespace": "Game.SkillTree.LargeSample.Editor",
+    "references": [
+        "Game.SkillTree.LargeSample",
+        "Game.SkillTree.Data"
+    ],
+    "includePlatforms": ["Editor"]
+}
+

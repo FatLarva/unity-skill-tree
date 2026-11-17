@@ -1,0 +1,9 @@
+{
+    "name": "Game.SkillTree.Samples.Editor",
+    "rootNamespace": "Game.SkillTree.Samples.Editor",
+    "references": [
+        "Game.SkillTree.Samples",
+        "Game.SkillTree.Data"
+    ],
+    "includePlatforms": ["Editor"]
+}

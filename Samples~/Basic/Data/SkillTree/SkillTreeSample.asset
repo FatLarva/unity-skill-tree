@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5adcfe44bc605444a05ec57b0e8d2e8, type: 3}
+  m_Name: SkillTreeSample
+  m_EditorClassIdentifier: Game.SkillTree.Data::Game.SkillTree.Data.SkillTreeConfig
+  _nodes:
+  - {fileID: 11400000, guid: 75d0dd91708d65940a739cfe099f4c6d, type: 2}
+  - {fileID: 11400000, guid: 1315d48d92f8058448f1201a6888dca0, type: 2}
+  - {fileID: 11400000, guid: af841a09323f4c94fba3a9a974dcd2bd, type: 2}
+  - {fileID: 11400000, guid: 8428094c8f4bd734da889ae3da824214, type: 2}
+  - {fileID: 11400000, guid: ca7dbcc79e8166c49a221727b821b1ca, type: 2}
+  - {fileID: 11400000, guid: b63f8e8db538b1c4eae33e488c3e00e7, type: 2}
+  - {fileID: 11400000, guid: 3334b6ddbd6a24548b654981452253e0, type: 2}
+  - {fileID: 11400000, guid: 96e17469fbe25174cbd9d7c97cff8688, type: 2}
+  - {fileID: 11400000, guid: 2e1b1b60cf3c56c4ea14db1c0fd73d84, type: 2}
+  - {fileID: 11400000, guid: 0b81a58ffadc52e439c6b73e919a4dc2, type: 2}
+  - {fileID: 11400000, guid: 84b310c359486874fb066b57c99004b9, type: 2}
+  - {fileID: 11400000, guid: 6fcad54d35c9e7b42beb374934a7104b, type: 2}
+  - {fileID: 11400000, guid: c79fd99d68621e342b44df2d72e76511, type: 2}
+  - {fileID: 11400000, guid: 210e04c93628e064989bfb5c8f24690a, type: 2}
+  - {fileID: 11400000, guid: ca6b77f03735ea04fa440c2fd01d2541, type: 2}
+  - {fileID: 11400000, guid: 37703a049b474044780ce7ba5d5cadff, type: 2}
+  - {fileID: 11400000, guid: 4be730dce1395f4448632e195304e4ef, type: 2}
+  - {fileID: 11400000, guid: 0e7becf6a4f1ba3409ac1528eb103080, type: 2}
+  - {fileID: 11400000, guid: 6112369ec3d4c31408881a3df65a669e, type: 2}
+  - {fileID: 11400000, guid: 074453a39f3d37644a801beffacea444, type: 2}
+  - {fileID: 11400000, guid: 6d24bb3565d9ac04da07da38b1607efa, type: 2}
+  - {fileID: 11400000, guid: 1acc14db07a1c2f44b648c659cd76e99, type: 2}
+  - {fileID: 11400000, guid: 8ca5d14b64ab13d49b5354a0f7c1ea72, type: 2}
+  - {fileID: 11400000, guid: 5f33f1acad8fbc14db5826ed0d09d32b, type: 2}
+  - {fileID: 11400000, guid: f1af145e8751f7f4d99d5b6d3f3364d8, type: 2}
+  - {fileID: 11400000, guid: db9c85177a30a5b4faa43296fd2a0e3a, type: 2}
+  - {fileID: 11400000, guid: a0d67fa8d475979449335143e8244f3f, type: 2}
+  - {fileID: 11400000, guid: c4044b0694fbba2479ea8be23d2a01c5, type: 2}
+  - {fileID: 11400000, guid: a2d5d887304a0f644893566ef1c4a9b3, type: 2}
+  - {fileID: 11400000, guid: c7a71a0c6a88c0945bf38785db3b3e7c, type: 2}
+  _layout: {fileID: 11400000, guid: 773dfd56134c8ef42984d2f230f3733e, type: 2}
+  _requirementTypes:
+  - {fileID: 11400000, guid: 67c848aa0d33d7149899bcf475a13723, type: 2}
+  _requirementResolver: {fileID: 11400000, guid: 2c2ac4dc7fa256f882fc5f2d217a102c, type: 2}
+  _effectTypes:
+  - _asset: {fileID: 11400000, guid: 96811655cc2850adaa6801c601f05d47, type: 2}
+  _enumGeneration:
+    _enabled: 1
+    _namespace: Game.SkillTree.Samples.Generated
+    _typeName: BasicSkillId
+    _assemblyName: Game.SkillTree.Samples
+  _nextNodeId: 31
+  _initialPoints: 24

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d49d7ec304b225a419820e5f9c952fe0, type: 3}
+  m_Name: Scouting
+  m_EditorClassIdentifier: Game.SkillTree.Data::Game.SkillTree.Data.SkillNodeConfig
+  _owner: {fileID: 11400000, guid: b47522dbbe84c3d499329e4669373d62, type: 2}
+  _properties:
+    _id: 28
+    _label: SCOUTING
+    _title: Scouting
+    _description: Reveal useful landmarks before setting out.
+    _category: EXPLORATION
+    _kind: 2
+    _hideUntilAvailable: 0
+    _showRequirements: []
+    _levels:
+    - _cost: 4
+      _requirementText: 
+      _requirements: []
+      _effects:
+      - _type:
+          _asset: {fileID: 11400000, guid: 96811655cc2850adaa6801c601f05d47, type: 2}
+        _parameters: {rid: 1000}
+    - _cost: 9
+      _requirementText: 
+      _requirements: []
+      _effects:
+      - _type:
+          _asset: {fileID: 11400000, guid: 96811655cc2850adaa6801c601f05d47, type: 2}
+        _parameters: {rid: 1001}
+  references:
+    version: 2
+    RefIds:
+    - rid: 1000
+      type: {class: StatModifierParameters, ns: Game.SkillTree.Samples, asm: Game.SkillTree.Samples}
+      data:
+        Stat: scouting-bonus
+        Value: 0.05
+        Operation: 0
+    - rid: 1001
+      type: {class: StatModifierParameters, ns: Game.SkillTree.Samples, asm: Game.SkillTree.Samples}
+      data:
+        Stat: scouting-bonus
+        Value: 0.1
+        Operation: 0
