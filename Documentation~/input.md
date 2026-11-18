@@ -2,6 +2,8 @@
 
 The graph receives pointer, drag, scroll, and navigation events through the normal uGUI EventSystem. Use the project's input module: StandaloneInputModule for the legacy Input Manager or InputSystemUIInputModule for the new Input System. The package does not change Active Input Handling.
 
+The Basic and Large sample scenes each configure their own EventSystem at startup. They use StandaloneInputModule in Old mode and InputSystemUIInputModule in New or Both mode. The latter uses the standard UI actions and requires the optional Input System package. Your own scene continues to use the input module you configure.
+
 Only two editing modifiers depend on the backend:
 
 | Property | Default key | Action |

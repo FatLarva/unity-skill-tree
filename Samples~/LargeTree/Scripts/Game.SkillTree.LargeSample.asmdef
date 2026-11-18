@@ -6,7 +6,15 @@
         "Game.SkillTree.Data",
         "UnityTools",
         "Unity.TextMeshPro",
-        "UnityEngine.UI"
+        "UnityEngine.UI",
+        "Unity.InputSystem"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.inputsystem",
+            "expression": "1.0.0",
+            "define": "FATLARVA_SKILLTREE_INPUT_SYSTEM"
+        }
     ]
 }
 

@@ -12,7 +12,7 @@ The game owns progression, currency, purchases, effect execution, and persistenc
 4. Run **Window → TextMeshPro → Import TMP Essential Resources**.
 5. Import **Basic Skill Tree** from Package Manager Samples, open `Scenes/SkillTreeSample.unity`, and enter Play Mode.
 
-The new Input System is optional. Pointer input uses the project's EventSystem; Shift/Alt use a replaceable adapter. Samples include StandaloneInputModule. Projects using only the new backend should use InputSystemUIInputModule; see [input](Documentation~/input.md).
+The new Input System is optional. Pointer input uses the project's EventSystem; Shift/Alt use a replaceable adapter. Samples choose their input module at startup and prefer the new Input System when both backends are enabled. See [input](Documentation~/input.md).
 
 UPM does not resolve transitive Git dependencies from a package's `package.json`. Add Tools to the project manifest. A disk installation can use:
 

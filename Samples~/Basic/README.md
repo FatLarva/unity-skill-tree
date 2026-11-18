@@ -10,7 +10,7 @@ A standalone 30-node example demonstrating the window prefab, level purchases, a
 
 SkillTreeDemo already references Container and Config. The tree has a requirement resolver and the layout references the default window prefab. No manual factory registration or uGUI construction is needed.
 
-The sample scene uses StandaloneInputModule for Legacy Input. In projects using only the new backend, replace it with InputSystemUIInputModule. When integrating into your own scene, use its configured EventSystem; do not change project input settings just for this library.
+The scene adds the input module for your project when Play starts. It uses the legacy Input Manager in Old mode and the Input System in New or Both mode. When integrating the tree into your own scene, use that scene's configured EventSystem.
 
 ## Try it
 
