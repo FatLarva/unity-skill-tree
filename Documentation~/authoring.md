@@ -44,6 +44,7 @@ SkillNodeLayoutConfig stores appearance, position, and visual parents. SkillTree
 | Zoom | Wheel/pinch or − and + |
 | Fit the tree | Fit |
 | Move a node | Drag in Edit mode |
+| Create and select a node at the center of the view | Add Node in Edit mode |
 | Move a subtree | Shift-drag |
 | Change the main visual parent | Right-click in Edit mode |
 | Toggle an additional parent | Alt + right-click |

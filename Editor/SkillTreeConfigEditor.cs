@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using Game.SkillTree.Data;
 using UnityEditor;
 using UnityEditor.UIElements;
@@ -16,7 +15,10 @@ namespace Game.SkillTree.Editor
         {
             var root = BeginInspector();
             var tree = (SkillTreeConfig)target;
-            root.Add(new Button(() => CreateNode(tree)) { text = "Create node in this tree" });
+            root.Add(new Button(() => SkillTreeAssetEditor.CreateNodeWithDialog(tree, Vector2.zero))
+            {
+                text = "Create node in this tree"
+            });
             var details = new VisualElement();
             details.AddToClassList("skill-tree-resolver-details");
             var implementation = new Label
@@ -95,50 +97,5 @@ namespace Game.SkillTree.Editor
             return root;
         }
 
-        private static void CreateNode(SkillTreeConfig tree)
-        {
-            if (tree.Layout == null)
-            {
-                Debug.LogError("Assign a layout config before creating a node.", tree);
-                return;
-            }
-            string treePath = AssetDatabase.GetAssetPath(tree);
-            string directory = Path.GetDirectoryName(treePath)?.Replace('\\', '/') ?? "Assets";
-            string path = EditorUtility.SaveFilePanelInProject("Create skill node", "NewSkill", "asset",
-                "Choose the node filename; it also defines its generated enum name.", directory);
-            if (string.IsNullOrEmpty(path)) return;
-            Undo.IncrementCurrentGroup();
-            int group = Undo.GetCurrentGroup();
-            Undo.SetCurrentGroupName("Create skill node");
-            Undo.RecordObjects(new UnityEngine.Object[] { tree, tree.Layout }, "Create skill node");
-            var node = ScriptableObject.CreateInstance<SkillNodeConfig>();
-            AssetDatabase.CreateAsset(node, path);
-            Undo.RegisterCreatedObjectUndo(node, "Create skill node");
-            try
-            {
-                tree.AddNode(node);
-                string title = Path.GetFileNameWithoutExtension(path);
-                node.Configure(new SkillNodeProperties(node.Id, title, title, string.Empty, string.Empty,
-                    SkillTreeNodeKind.Skill, false, new[] { new SkillLevel(0) }));
-                var appearance = ScriptableObject.CreateInstance<SkillNodeLayoutConfig>();
-                appearance.Configure(new SkillTreeNodeLayout(node.Id, 0, Vector2.zero, Color.white));
-                string appearancePath = AssetDatabase.GenerateUniqueAssetPath(Path.ChangeExtension(path, "layout.asset"));
-                AssetDatabase.CreateAsset(appearance, appearancePath);
-                Undo.RegisterCreatedObjectUndo(appearance, "Create skill node");
-                var layouts = new List<SkillNodeLayoutConfig>(tree.Layout.Nodes) { appearance };
-                tree.Layout.Configure(layouts);
-                EditorUtility.SetDirty(tree);
-                EditorUtility.SetDirty(tree.Layout);
-                EditorUtility.SetDirty(node);
-                AssetDatabase.SaveAssets();
-                Selection.activeObject = node;
-                Undo.CollapseUndoOperations(group);
-            }
-            catch (Exception exception)
-            {
-                Undo.RevertAllDownToGroup(group);
-                Debug.LogError(exception.Message, tree);
-            }
-        }
     }
 }

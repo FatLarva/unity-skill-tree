@@ -9,6 +9,11 @@ namespace Game.SkillTree.Data
         public static bool Available => _editor != null;
 
         public static void Register(ISkillTreeAssetEditor editor) => _editor = editor;
+        public static SkillNodeConfig CreateNode(SkillTreeConfig tree, SkillTreeGraph graph)
+        {
+            return _editor?.CreateNode(tree, graph);
+        }
+
         public static bool OpenNode(SkillNodeConfig node) => _editor?.OpenNode(node) ?? false;
         public static bool OpenProperties(SkillTreeConfig tree, int nodeId, SkillTreeGraph graph) =>
             _editor?.OpenProperties(tree, nodeId, graph) ?? false;

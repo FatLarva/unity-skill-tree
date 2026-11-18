@@ -46,6 +46,7 @@ namespace Game.SkillTree
         [SerializeField] private UnityEngine.UI.Button _nodeDataButton;
         [SerializeField] private UnityEngine.UI.Button _propertiesButton;
         [SerializeField] private UnityEngine.UI.Button _arrangeButton;
+        [SerializeField] private UnityEngine.UI.Button _addNodeButton;
         [SerializeField] private UnityEngine.UI.Button _undoButton;
         [SerializeField] private UnityEngine.UI.Button _redoButton;
         [SerializeField] private RectTransform _detailsIcon;
@@ -59,6 +60,7 @@ namespace Game.SkillTree
         private int _walletValue;
         private Action _undo;
         private Action _redo;
+        private Action _addNode;
 
         public event Action ResetLayoutRequested;
         public event Action LayoutChanged;
@@ -82,6 +84,12 @@ namespace Game.SkillTree
         {
             _undo = undo;
             _redo = redo;
+            UpdateEditingControls();
+        }
+
+        public void SetAddNodeAction(Action addNode)
+        {
+            _addNode = addNode;
             UpdateEditingControls();
         }
 
@@ -241,6 +249,10 @@ namespace Game.SkillTree
             _nodeDataButton.onClick.RemoveListener(RequestData);
             _propertiesButton.onClick.RemoveListener(OpenNodeProperties);
             _arrangeButton.onClick.RemoveListener(OpenArrangement);
+            if (_addNodeButton != null)
+            {
+                _addNodeButton.onClick.RemoveListener(AddNode);
+            }
             _undoButton.onClick.RemoveListener(Undo);
             _redoButton.onClick.RemoveListener(Redo);
             _subscribed = false;
@@ -269,6 +281,10 @@ namespace Game.SkillTree
             _nodeDataButton.onClick.AddListener(RequestData);
             _propertiesButton.onClick.AddListener(OpenNodeProperties);
             _arrangeButton.onClick.AddListener(OpenArrangement);
+            if (_addNodeButton != null)
+            {
+                _addNodeButton.onClick.AddListener(AddNode);
+            }
             _undoButton.onClick.AddListener(Undo);
             _redoButton.onClick.AddListener(Redo);
             _subscribed = true;
@@ -305,6 +321,14 @@ namespace Game.SkillTree
         private void ZoomOut() => _graph.ZoomBy(1f / ZoomStep);
         private void ZoomIn() => _graph.ZoomBy(ZoomStep);
 
+        private void AddNode()
+        {
+            if (_graph.Editable)
+            {
+                _addNode?.Invoke();
+            }
+        }
+
         private void Undo()
         {
             _undo?.Invoke();
@@ -339,6 +363,10 @@ namespace Game.SkillTree
             _nodeDataButton.gameObject.SetActive(_graph.Editable);
             _propertiesButton.gameObject.SetActive(_graph.Editable);
             _arrangeButton.gameObject.SetActive(_graph.Editable);
+            if (_addNodeButton != null)
+            {
+                _addNodeButton.gameObject.SetActive(_graph.Editable && _addNode != null);
+            }
             _undoButton.gameObject.SetActive(_graph.Editable && _undo != null);
             _redoButton.gameObject.SetActive(_graph.Editable && _redo != null);
             _subtitle.gameObject.SetActive(!_graph.Editable);

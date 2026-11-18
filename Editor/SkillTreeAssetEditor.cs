@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using Game.SkillTree.Data;
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -38,6 +39,80 @@ namespace Game.SkillTree.Editor
             EditorGUIUtility.PingObject(node);
             EditorApplication.ExecuteMenuItem("Window/General/Inspector");
             return true;
+        }
+
+        public SkillNodeConfig CreateNode(SkillTreeConfig tree, SkillTreeGraph graph)
+        {
+            CloseContext(graph);
+            return CreateNodeWithDialog(tree, graph != null ? graph.ViewCenter : Vector2.zero);
+        }
+
+        internal static SkillNodeConfig CreateNodeWithDialog(SkillTreeConfig tree, Vector2 position)
+        {
+            if (tree.Layout == null)
+            {
+                Debug.LogError("Assign a layout config before creating a node.", tree);
+                return null;
+            }
+
+            string treePath = AssetDatabase.GetAssetPath(tree);
+            string directory = Path.GetDirectoryName(treePath)?.Replace('\\', '/') ?? "Assets";
+            string path = EditorUtility.SaveFilePanelInProject("Create skill node", "NewSkill", "asset",
+                "Choose the node filename; it also defines its generated enum name.", directory);
+            if (string.IsNullOrEmpty(path))
+            {
+                return null;
+            }
+
+            var node = CreateNodeAsset(tree, path, position);
+            if (node != null)
+            {
+                Selection.activeObject = node;
+            }
+            return node;
+        }
+
+        internal static SkillNodeConfig CreateNodeAsset(SkillTreeConfig tree, string path, Vector2 position)
+        {
+            const string undoName = "Create skill node";
+            path = AssetDatabase.GenerateUniqueAssetPath(path);
+            string layoutPath = AssetDatabase.GenerateUniqueAssetPath(Path.ChangeExtension(path, "layout.asset"));
+            Undo.IncrementCurrentGroup();
+            int group = Undo.GetCurrentGroup();
+            Undo.SetCurrentGroupName(undoName);
+
+            try
+            {
+                var node = ScriptableObject.CreateInstance<SkillNodeConfig>();
+                AssetDatabase.CreateAsset(node, path);
+                Undo.RegisterCreatedObjectUndo(node, undoName);
+                var appearance = ScriptableObject.CreateInstance<SkillNodeLayoutConfig>();
+                AssetDatabase.CreateAsset(appearance, layoutPath);
+                Undo.RegisterCreatedObjectUndo(appearance, undoName);
+                Undo.RegisterCompleteObjectUndo(new UnityEngine.Object[] { tree, tree.Layout, node, appearance }, undoName);
+
+                tree.AddNode(node);
+                string title = Path.GetFileNameWithoutExtension(path);
+                node.Configure(new SkillNodeProperties(node.Id, title, title, string.Empty, string.Empty,
+                    SkillTreeNodeKind.Skill, false, new[] { new SkillLevel(0) }));
+                appearance.Configure(new SkillTreeNodeLayout(node.Id, 0, position, Color.white));
+                var layouts = new List<SkillNodeLayoutConfig>(tree.Layout.Nodes) { appearance };
+                tree.Layout.Configure(layouts);
+                MarkEditedAsset(tree);
+                MarkEditedAsset(tree.Layout);
+                EditorUtility.SetDirty(node);
+                EditorUtility.SetDirty(appearance);
+                AssetDatabase.SaveAssets();
+                Undo.CollapseUndoOperations(group);
+                Undo.IncrementCurrentGroup();
+                return node;
+            }
+            catch (Exception exception)
+            {
+                Undo.RevertAllDownToGroup(group);
+                Debug.LogError(exception.Message, tree);
+                return null;
+            }
         }
 
         public bool OpenProperties(SkillTreeConfig tree, int nodeId, SkillTreeGraph graph)

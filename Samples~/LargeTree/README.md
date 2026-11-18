@@ -17,7 +17,7 @@ The scene adds the input module for your project when Play starts. It uses the l
 - Select a node, inspect requirements, and purchase an available rank.
 - Drag the background to pan; use the wheel to zoom and Fit for an overview.
 - Enable Edit in the Unity Editor. Shift-drag moves a subtree; right-click changes the main visual parent; Alt-right-click toggles an additional parent.
-- Properties and Arrange open the Inspector; Data opens the selected node asset. Asset edits support Undo.
+- In Edit mode, Add Node creates a node and its layout at the center of the view. Properties and Arrange open the Inspector; Data opens the selected node asset. Asset edits support Undo.
 - SkillTreeDemo's component menu provides **Add 100 Test Points**, **Reset Test Progress**, and **Open Skill Tree**.
 
 Layout Reset restores the layout captured at session start. Reset Test Progress resets wallet, levels, and applied effects. Progress does not persist between runs.

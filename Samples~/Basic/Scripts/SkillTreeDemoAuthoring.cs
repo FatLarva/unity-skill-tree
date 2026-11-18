@@ -21,6 +21,7 @@ namespace Game.SkillTree.Samples
             _window = window;
             foreach (var layout in config.Layout.Nodes) _openingLayout.Add(layout.NodeId, layout.Properties);
             _window.SetHistoryActions(Undo, Redo);
+            _window.SetAddNodeAction(AddNode);
             _window.ResetLayoutRequested += ResetLayout;
             _window.DataRequested += OpenNodeData;
             _window.PropertiesRequested += OpenProperties;
@@ -72,6 +73,19 @@ namespace Game.SkillTree.Samples
             _window.SetFeedback("Restored this session's opening layout. Skill progress is unchanged.");
         }
 
+        private void AddNode()
+        {
+            var node = SkillTreeAssetEditing.CreateNode(_config, _window.Graph);
+            if (node == null || !_presenter.Refresh())
+            {
+                return;
+            }
+
+            _dirty = false;
+            _wasPreviewing = false;
+            _window.Graph.Select(node.Id);
+        }
+
         private void OpenNodeData()
         {
             var node = _config.FindNode(_window.Graph.SelectedId);
@@ -89,6 +103,7 @@ namespace Game.SkillTree.Samples
 
         public void Dispose()
         {
+            _window.SetAddNodeAction(null);
             SkillTreeConfigAsset.Changed -= OnAssetChanged;
             _window.ResetLayoutRequested -= ResetLayout;
             _window.DataRequested -= OpenNodeData;

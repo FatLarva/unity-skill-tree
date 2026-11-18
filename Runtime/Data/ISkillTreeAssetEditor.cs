@@ -4,6 +4,7 @@ namespace Game.SkillTree.Data
 {
     public interface ISkillTreeAssetEditor
     {
+        SkillNodeConfig CreateNode(SkillTreeConfig tree, SkillTreeGraph graph);
         bool OpenNode(SkillNodeConfig node);
         bool OpenProperties(SkillTreeConfig tree, int nodeId, SkillTreeGraph graph);
         bool OpenArrangement(SkillTreeConfig tree, SkillTreeGraph graph);

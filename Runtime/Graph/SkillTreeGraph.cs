@@ -79,6 +79,14 @@ namespace Game.SkillTree
             }
         }
         public Vector2 Pan => _pan;
+        public Vector2 ViewCenter
+        {
+            get
+            {
+                Vector2 center = (rectTransform.rect.center - _pan) / _zoom;
+                return new Vector2(center.x, -center.y);
+            }
+        }
         public int SelectedId => _selectedId;
         public IReadOnlyList<SkillTreeNode> Nodes => _nodes;
 
